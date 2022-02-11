@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.structure.css">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.theme.css">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="Jquery Practice/Jquery Practice.css">
+	<script src="Jquery Practice/Jquery Practice.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veyron Bugatti</title>
+    <script> $( function() {
+      $( "#accordion" ).accordion();
+    } );
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    
+    $( function() {
+      $( "#progressbar" ).progressbar({
+        value: 37
+      });
+    } );
+    $( function() {
+      var progressTimer,
+        progressbar = $( "#progressbar" ),
+        progressLabel = $( ".progress-label" ),
+        dialogButtons = [{
+          text: "Cancel",
+          click: closeDownload
+        }],
+        dialog = $( "#dialog" ).dialog({
+          autoOpen: false,
+          closeOnEscape: false,
+          resizable: false,
+          buttons: dialogButtons,
+          open: function() {
+            progressTimer = setTimeout( progress, 2000 );
+          },
+          beforeClose: function() {
+            downloadButton.button( "option", {
+              disabled: false,
+              label: "Submit Form"
+            });
+          }
+        }),
+        downloadButton = $( "#downloadButton" )
+          .button()
+          .on( "click", function() {
+            $( this ).button( "option", {
+              disabled: true,
+              label: "Downloading..."
+            });
+            dialog.dialog( "open" );
+          });
+   
+      progressbar.progressbar({
+        value: false,
+        change: function() {
+          progressLabel.text( "Current Progress: " + progressbar.progressbar( "value" ) + "%" );
+        },
+        complete: function() {
+          progressLabel.text( "Complete!" );
+          dialog.dialog( "option", "buttons", [{
+            text: "Close",
+            click: closeDownload
+          }]);
+          $(".ui-dialog button").last().trigger( "focus" );
+        }
+      });
+   
+      function progress() {
+        var val = progressbar.progressbar( "value" ) || 0;
+   
+        progressbar.progressbar( "value", val + Math.floor( Math.random() * 3 ) );
+   
+        if ( val <= 99 ) {
+          progressTimer = setTimeout( progress, 50 );
+        }
+      }
+   
+      function closeDownload() {
+        clearTimeout( progressTimer );
+        dialog
+          .dialog( "option", "buttons", dialogButtons )
+          .dialog( "close" );
+        progressbar.progressbar( "value", false );
+        progressLabel
+          .text( "Submiting Form" );
+        downloadButton.trigger( "focus" );
+      }
+    } );
+    </script>
+    <style>.ui-widget-header {
+      border: 1px solid black;
+      background: red;
+      color: white;
+      font-weight: bold;
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  }
+  .progress-label {
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #fff;
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  }
+  .ui-widget button {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+      font-size: 1em;
+  }
+  
+        
+        #progressbar {
+      margin-top: 20px;
+    }
+   
+    .progress-label {
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #fff;
+    }
+   
+    .ui-dialog-titlebar-close {
+      display: none;
+    }
+  
+      ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: black;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        
+        footer{
+            background-color: black;
+            color:white;
+            text-align: center;
+        }
+      .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+      border: 1px solid black;
+      background: red;
+      font-weight: normal;
+      color: white;
+     }
+  
+     h1{
+       text-align: center;
+       font-family: 'Zen Kaku Gothic Antique', sans-serif;
+     }
+     p{
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+      color:black;
+     }
+     h3{
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+     }
+     ul{
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+     }
+     section{
+       margin-left: 50px;
+       margin-right: 50px;
+     }
+     #fname{
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+     }
+     #phone{
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  
+     }
+     #gender{
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  
+     }
+     label{
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+     }
+     .ui-widget {
+      font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    
+      font-size: 1em;
+  }
+       </style>
+
+      
+      
+      
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        
+        
+      </ul>
+        <img src = "Jquery Practice/car-49278_1920.jpg" width="1503px" height="900px">
+        
+        <section>
+          <h1>About Veyron</h1>
+          <div id="accordion">
+            <h3>History of Veyron</h3>
+            <div>
+              <p>
+                The Bugatti Veyron EB 16.4 is a mid-engine sports car, designed and developed in France by the Volkswagen Group and Bugatti and manufactured in Molsheim, France, by French automobile manufacturer Bugatti. ... It was named Car of the Decade and best car award (2000–2009) by the BBC television programme Top Gear.
+              </p>
+            </div>
+            <h3>Car Specs</h3>
+            <div>
+              <p>
+                Make: Bugatti
+                Horsepower: 1,200 hp
+                Engine: 8.0 L V16
+                MPG: 7 city / 15 highway
+                Curb weight: 4,044 lbs
+                Torque: 1,106 lb-ft
+                Transmission: 7-speed automatic
+              </p>
+            </div>
+            <h3>Key Features</h3>
+            <div>
+              <p>
+                ARAI Mileage	6.8 kmpl
+                Engine Displacement (cc)	7993
+                No. of cylinder	16
+                Max Power (bhp@rpm)	1001bhp@6000rpm
+                Max Torque (nm@rpm)	1250Nm@2200-5500rpm
+              </p>
+              
+            </div>
+            <h3>Performance</h3>
+            <div>
+              <p>
+               
+0 - 80 kph	2.2 s
+0 - 100 kph	2.5 s
+0 - 130 kph	3.7 s
+0 - 180 kph	5.9 s
+0 - 200 kph	6.7 s
+0 - 300 kph	14.6 s
+1000 m	18.0 s @ 295.0 kph
+Est. 100 - 200 kph	4.7 s
+Est. 200 - 300 kph	10.2 s
+0 - 60 mph	2.4 s
+0 - 100 mph	4.9 s
+0 - 150 mph	10.2 s
+0 - 200 mph	22.2 s
+Est. 1/8 mile	6.8 s @ 117.4 mph
+1/4 mile	9.9 s @ 146.0 mph
+Est. 1/2 mile	16.0 s @ 180.2 mph
+Top speed	434 kph (270 mph)
+Est. max acceleration	1.09 g (11 m/s²)
+300 kph - 0	310 m (1015 ft)
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+
+          <h1>Schedule an Appointment?</h1>
+          <form>
+            <label for="fname">Enter Your First Name</label>
+            <input type="text" id="fname" name="fname"><br>
+        <br>
+            <label for="Lname">Enter Your Last Name</label>
+            <input type="text" id="fname" name="Lname"><br>
+        <br>
+            <label for="Lname">Enter Phone Number</label>
+            <input type="text" id="phone" name="Phone"><br>
+        <br>
+            <label for="Lname">Enter Gender</label>
+            <select name = "gender" id ="gender">
+              <option value = "Default" selected> </option>
+              <option value="female"> Female </option>
+              <option value="male"> Male </option>
+            </select><br>
+        <br>
+        <p>Date: <input type="text" id="datepicker"></p>
+        
+          </form>
+          
+        </section>
+          
+          <section>
+            <br>
+            <br>
+            <div id="dialog" title="File Download">
+              <div class="progress-label">Submiting Form</div>
+              <div id="progressbar"></div>
+            </div>
+            <button id="downloadButton"> Submit Form</button>
+          </section>
+         
+          
+      <footer>
+          
+
+      </footer>
+</body>
+
+</html>
