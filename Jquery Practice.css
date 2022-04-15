@@ -1,0 +1,104 @@
+
+
+.ui-widget-header {
+    border: 1px solid black;
+    background: red;
+    color: white;
+    font-weight: bold;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+.progress-label {
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+.ui-widget button {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-size: 1em;
+}
+
+      
+      #progressbar {
+    margin-top: 20px;
+  }
+ 
+  .progress-label {
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+  }
+ 
+  .ui-dialog-titlebar-close {
+    display: none;
+  }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      
+      footer{
+          background-color: black;
+          color:white;
+          text-align: center;
+      }
+    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: 1px solid black;
+    background: red;
+    font-weight: normal;
+    color: white;
+   }
+
+   h1{
+     text-align: center;
+     font-family: 'Zen Kaku Gothic Antique', sans-serif;
+   }
+   p{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    color:black;
+   }
+   h3{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+   }
+   ul{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+   }
+   section{
+     margin-left: 50px;
+     margin-right: 50px;
+   }
+   #fname{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+   }
+   #phone{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+
+   }
+   #gender{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+
+   }
+   label{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+   }
+   .ui-widget {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  
+    font-size: 1em;
+}
+     
